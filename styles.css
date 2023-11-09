@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 1fr 3fr 1fr;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#video-container {
+    
+}
+
+#video-container video {
+    border-radius: 10px;
+}
