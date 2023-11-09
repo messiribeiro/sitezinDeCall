@@ -1,3 +1,5 @@
+const video = document.querySelector('.vidPlayer')
+
 window.navigator.mediaDevices.getUserMedia({ video: true })
 .then(stream => {
     video.srcObject = stream;
