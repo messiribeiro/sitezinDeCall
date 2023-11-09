@@ -1,26 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Roboto:wght@400;700;900&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
-
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
     display: grid;
     width: 100vw;
     height: 100vh;
-    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
 }
 
 main {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0.5rem;
+}
+
+#video-and-chat-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    height: 500px;
 }
 
 #video-container {
-    
+    display: grid;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5em;
+    height: 100%;
 }
 
 #video-container video {
     border-radius: 10px;
+    width: 350px;
+    height: 100%;
+    background-color: rgb(87, 87, 87);
+    align-self: center;
 }
+
+#chat-container {
+    background-color: white;
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 300px;
+    box-shadow: 0px 1px 84px 10px rgba(0, 0, 0, 0.178);
+    -webkit-box-shadow: 0px 1px 84px 10px rgba(0, 0, 0, 0.185);
+    -moz-box-shadow: 0px 1px 84px 10px rgba(0, 0, 0, 0.178);
+    height: 100%;
+}
+
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.555);
+    flex: 1;
+    overflow-y: scroll;
+
+}
+
+
+
+/* #messages-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.555);
+    overflow-y: scroll;
+    height: 100%;
+    max-height: 25em;
+} */
+
+#messages div:last-child{
+    margin-bottom: 1em;
+}
+
+.sender {
+    align-self: flex-end;
+    background-color: aquamarine;
+    min-width: 5em;
+    max-width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
+    word-break: break-all;
+    animation: messageAnimation 0.2s ease-in-out;
+    flex-direction: column;
+
+}
+
+.target .message {
+    align-self: flex-start;
+    font-size: 12px;
+}
+
+.target .time {
+    margin-top: 5px;
+    font-size: 9px;
+    align-self: flex-start;
+}
+
+.sender .message {
+    align-self: flex-end;
+    font-size: 12px;
+}
+
+.sender .time {
+    margin-top: 5px;
+    font-size: 9px;
+    align-self: flex-end;
+}
+
+@keyframes messageAnimation {
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.target {
+    
+
+    align-self: flex-start;
+    background-color: aquamarine;
+    min-width: 5em;
+    max-width: 80%;
+    min-height: 3em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
+    word-break: break-all;
+    animation: messageAnimation 0.2s ease-in-out;
+    flex-direction: column;
+
+}
+
+#text-input {
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: rgba(27, 207, 198, 0.596);
+    border-radius: 10px;
+    padding: 0 .5em;
+}
+
+form#text-input {
+    width: 100%;
+    display: flex;
+}
+
+#text-input input {
+    outline: none;
+    height: 3em;
+    border-radius: 10px;
+    border: none;
+    background: none;
+    color: rgba(0, 0, 0, 0.397);
+    width: 90%;
+}
+
+
+#text-input input::placeholder{
+    color: rgba(0, 0, 0, 0.397);
+    font-size: 12px;
+
+}
+
+img#svg {
+    opacity: 0.5;
+    width: 19px;
+}
+
+
+#text-input button {
+    border: none;
+    background: none;
+    width: 10%;
+    cursor: pointer;
+    outline: none;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #b3ffdb #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #b3ffdb;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+
+  #warning {
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 1em;
+    opacity: 0.5;
+  }

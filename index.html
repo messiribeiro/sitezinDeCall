@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>teste</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
 
     </header>
     <main>
-        <div id="video-container" >
-            <video id="vidPlayer"  controls muted autoplay></video>
+        <div id="video-and-chat-container">
+            <div id="video-container">
+                <video class="vidPlayer" controls muted autoplay></video>
+                <video class="vidPlayer2" controls muted autoplay></video>
 
+            </div>
+            <div id="chat-container">
+                <div id="messages">
+                    <p id="warning" >Pedir nude é feio 😡</p>
+                    <!-- <div class="sender">
+                        <p class="message" >m?</p>
+                        <p  class="time">12:00</p>
+                    </div> -->
+                    <!-- <div class="target">
+                        <p id="message" >m?</p>
+                        <p  id="time"></p>
+                    </div> -->
+                </div>
+
+                <form id="text-input">
+                    <input class="message-text" type="text" placeholder="Enviar mensagem">
+                    <button title="send" class="send-message" type="submit">
+                        <img id="svg" src="./assets/send.svg" alt="">
+                    </button>
+                </form>
+
+
+            </div>
         </div>
+
     </main>
     <footer>
 
     </footer>
     
+    <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
